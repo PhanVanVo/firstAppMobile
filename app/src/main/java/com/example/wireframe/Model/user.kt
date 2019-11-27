@@ -1,8 +1,8 @@
 package com.example.wireframe.Model
 
 data class  user(
-    var email:String = "",
-    var password:String ="",
-    var firstName:String ="",
-    var lastName:String =""
+    var EMAIL:String = "",
+    var PASSWORD:String ="",
+    var FIRST_NAME:String ="",
+    var LAST_NAME:String =""
 )

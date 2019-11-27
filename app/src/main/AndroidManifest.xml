@@ -10,19 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".category"></activity>
-        <activity android:name=".chinese" />
-        <activity android:name=".home" />
-        <activity android:name=".ExMenu" />
-        <activity android:name=".verificationCode" />
-        <activity android:name=".ForgotPassword" />
-        <activity android:name=".Register3" />
-        <activity android:name=".Regiser2" />
-        <activity android:name=".Register" />
-        <activity android:name=".Login" />
-        <activity android:name=".wellcome3" />
-        <activity android:name=".wellcome2" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".activities.category"></activity>
+        <activity android:name=".activities.chinese" />
+        <activity android:name=".activities.home" />
+        <activity android:name=".activities.ExMenu" />
+        <activity android:name=".activities.verificationCode" />
+        <activity android:name=".activities.ForgotPassword" />
+        <activity android:name=".activities.Register3" />
+        <activity android:name=".activities.Regiser2" />
+        <activity android:name=".activities.Register" />
+        <activity android:name=".activities.Login" />
+        <activity android:name=".activities.wellcome3" />
+        <activity android:name=".activities.wellcome2" />
+        <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,8 +1,9 @@
-package com.example.wireframe
+package com.example.wireframe.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.wireframe.R
 import kotlinx.android.synthetic.main.activity_ex_menu.*
 
 class ExMenu : AppCompatActivity() {
@@ -13,7 +14,10 @@ class ExMenu : AppCompatActivity() {
         btnSingUp.setOnClickListener{
             var intent= Intent (this, home::class.java)
             startActivity(intent)
-            overridePendingTransition(R.anim.slide_in_bottom, R.anim.slide_out_botoom);
+            overridePendingTransition(
+                R.anim.slide_in_bottom,
+                R.anim.slide_out_botoom
+            );
         }
     }
 }
