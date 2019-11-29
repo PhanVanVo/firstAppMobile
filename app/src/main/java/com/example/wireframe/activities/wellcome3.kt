@@ -16,5 +16,9 @@ class wellcome3 : AppCompatActivity() {
             var intent= Intent (this, Login::class.java)
             startActivity(intent)
         }
+        btnSkip.setOnClickListener{
+            var intent= Intent (this, Login::class.java)
+            startActivity(intent)
+        }
     }
 }

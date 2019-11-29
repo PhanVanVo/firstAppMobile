@@ -16,9 +16,10 @@ class Regiser2 : AppCompatActivity() {
         fun isEmailValid(email: String): Boolean {
             return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
         }
+
         val lastName:String = intent.getStringExtra("LName")
         val firstName:String = intent.getStringExtra("FtName")
-        btnSingUp.setOnClickListener{
+        btnConform.setOnClickListener{
             var intent= Intent (this, Register3::class.java)
             var Email:String = txtEmail.text.toString()
 

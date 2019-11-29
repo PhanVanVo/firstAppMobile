@@ -14,10 +14,13 @@ class MainActivity : AppCompatActivity(){
         setContentView(R.layout.activity_main)
 
         btnNext.setOnClickListener{
+            var intent= Intent (this, wellcome2::class.java)
+            startActivity(intent)
+        }
+        btnSkip.setOnClickListener{
             var intent= Intent (this, Login::class.java)
             startActivity(intent)
         }
-
 
     }
 

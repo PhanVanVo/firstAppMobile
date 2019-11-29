@@ -7,7 +7,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object ServiceBuilder {
 
-    // Before release, change this URL to your live server URL such as "https://smartherd.com/"
     private const val URL = "http://192.168.107.231:8085/seller/"
 
     // Create Logger

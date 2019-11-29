@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import com.example.wireframe.Model.signup
 import com.example.wireframe.Model.user
 import com.example.wireframe.R
 import com.example.wireframe.retrofit.ApiClient
@@ -22,12 +23,10 @@ class Register3 : AppCompatActivity() {
 
         val context = this
         val Mail:String = intent.getStringExtra("email")
-
         val LName:String = intent.getStringExtra("LName")
-
         val FtName:String = intent.getStringExtra("FtName")
 
-        btnSingUp.setOnClickListener{
+        btnConform.setOnClickListener{
             var intent= Intent (this, Login::class.java)
             var Pass:String = txtPassWord.text.toString().trim()
             var RePass:String = txtRePassWord.text.toString().trim()
@@ -48,22 +47,27 @@ class Register3 : AppCompatActivity() {
                     val userService = ServiceBuilder.buildService(ApiClient::class.java)
                     val requestCall = userService.AddUser(newUser)
 
-                    requestCall.enqueue(object: Callback<user> {
+                    requestCall.enqueue(object: Callback<signup> {
 
-                        override fun onResponse(call: Call<user>, response: Response<user>) {
+                        override fun onResponse(call: Call<signup>, response: Response<signup>) {
                             if (response.isSuccessful) {
 
                                 var newlyCreatedDestination = response.body()
-                                Log.d("Phan van vo", "${newlyCreatedDestination}")
-                                //Toast.makeText(context, "Successfully Added", Toast.LENGTH_SHORT).show()
-                                //startActivity(intent)
+                                Log.d("Phan van vo", "${response.body()?.Message}")
+                                 if(response.body()?.Status == "500"){
+                                     Toast.makeText(context, "duplicate email ", Toast.LENGTH_SHORT).show()
+                                 }else{
+                                     Toast.makeText(context, "Sign Up Success", Toast.LENGTH_SHORT).show()
+                                     startActivity(intent)
+                                 }
 
-                            } else {
-                                Toast.makeText(context, "Failed to add item", Toast.LENGTH_SHORT).show()
+
+                            }else {
+                                Toast.makeText(context, "system error", Toast.LENGTH_SHORT).show()
                             }
                         }
-                        override fun onFailure(call: Call<user>, t: Throwable) {
-                            Toast.makeText(context, "Failed to add item", Toast.LENGTH_SHORT).show()
+                        override fun onFailure(call: Call<signup>, t: Throwable) {
+                            Toast.makeText(context, "system error", Toast.LENGTH_SHORT).show()
                         }
                     })
 
